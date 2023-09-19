@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> 
+      <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh8rN5t4+1reReE4L+7sbAH7m6nW60YrjH+JpQk767Vaim7x9t2p+81bjFdet+jZ" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EQBeq0nUKvBS3lQzPSv+h4fEt/11lDejT9qE0jse5r+j79VSZhu4ktr74K1" crossorigin="anonymous"></script>
+
+    </head>
+<main id="main" class="container">
+    <div class="row">
+       <div class="col-xs-12 col-lg-offset-3 col-lg-6" style="padding-left: 10%;padding-right: 10%;">
+          <div class="m-b-md text-center" id="title">
+             <h1 id="title">Student Exam Performance Indicator</h1>
+             <p id="description" class="description" class="text-center">Student Exam Performance Prediction</p>
+          </div>
+          <form method="post" action="{{ url_for('predict_datapoint') }}" id="survey-form" name="survey-form">
+             <fieldset>
+                <label for="dropdown">
+                   Gender *
+                   <select id="dropdown" name="gender" class="m-t-xs">
+                      <option value="male" selected>Male</option>
+                      <option value="female">Female</option>
+                   </select>
+                </label>
+             </fieldset>
+             <fieldset>
+                <label for="survey-form-like">
+                   Race / Ethenicity *
+                   <select id="survey-form-like" name="race_ethnicity" class="m-t-xs">
+                      <option value="group A" selected>Group A</option>
+                      <option value="group B">Group B</option>
+                      <option value="group C">Group C</option>
+                      <option value="group D">Group D</option>											
+                      <option value="group E">Group E</option>
+                   </select>
+                </label>
+             </fieldset>
+                                                 
+             <fieldset>
+                <label for="survey-form-like">
+                   Parental Level of Education *
+                   <select id="survey-form-like" name="parental_level_of_education" class="m-t-xs">
+                      <option value="associate's degree" selected>associate's degree</option>
+                      <option value="bachelor's degree">bachelor's degree</option>
+                      <option value="high school">high school</option>
+                      <option value="master's degree">master's degree</option>											
+                      <option value="some college">some college</option>
+                      <option value="some high school">some high school</option>
+                   </select>
+                </label>
+             </fieldset>
+                                             
+             <fieldset>
+                <label for="survey-form-like">
+                   Lunch Type *
+                   <select id="survey-form-like" name="lunch" class="m-t-xs">
+                      <option value="free/reduced" selected>free/reduced</option>
+                      <option value="standard">standard</option>
+                   </select>
+                </label>
+             </fieldset>
+                                         
+             <fieldset>
+                <label for="survey-form-like">
+                   Test preparation Course *
+                   <select id="survey-form-like" name="test_preparation_course" class="m-t-xs">
+                      <option value="none" selected>None</option>
+                      <option value="completed">Completed</option>
+                   </select>
+                </label>
+             </fieldset>
+                                         
+             <fieldset>
+                <label for="number" id="number-label">
+                Writing Score out of 100 *
+                <input class="" type="number" id="number" name="writing_score" min="0" max="100" placeholder="Enter you age (required)" required />
+                </label>
+             </fieldset>
+                                         
+             <fieldset>
+                <label for="number" id="number-label">
+                Reading Score out of 100 *
+                <input class="" type="number" id="number" name="reading_score" min="0" max="100" placeholder="Enter you age (required)" required />
+                </label>
+             </fieldset>
+             
+             
+             <button id="submit" type="submit" class="btn" required>Predict your Math Score</button>
+          </form>
+          <br>
+          <br>
+          <div class="m-b-md text-center" id="title">
+            <p id="description" class="description" class="text-center">THE  prediction is {{results}}</p>
+         </div>
+         
+       </div>
+    </div>
+ </main>
+ </html>

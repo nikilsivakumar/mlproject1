@@ -20,7 +20,7 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     #create models and save to pickle file for future purpose
-    preprocessor_obj_file_path = os.path.join('artifacts',"preprocessor.pki")
+    preprocessor_obj_file_path = os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
